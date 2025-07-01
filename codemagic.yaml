@@ -13,7 +13,8 @@ workflows:
         script: |
           npm install
       - name: Set platform 13.0
-        script: sed -i '' 's/platform :ios, .*/platform :ios, '\''13.0'\''/' ios/Podfile
+        script: |
+    echo "platform :ios, '13.0'" > ios/_FixedPodfileHeader tail -n +2 ios/Podfile >> ios/_FixedPodfileHeader mv ios/_FixedPodfileHeader ios/Podfile
       - name: Clean and update CocoaPods
         script: |
           cd ios
