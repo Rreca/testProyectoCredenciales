@@ -27,6 +27,13 @@ workflows:
               echo "👉 Updating Hermes"
               pod update hermes-engine --no-repo-update || { echo "❌ pod update failed"; exit 1; }
               cd ..
+      -name: Debug iOS folder
+        script: |
+              echo "📂 Contenido de ios/"
+              ls -la ios/
+              echo "📂 Contenido de ios/Credencial.xcworkspace/"
+              ls -la ios/Credencial.xcworkspace || echo "❌ No existe la carpeta xcworkspace"
+    
       - name:  Verify xcworkspace exists
         script: |
           if [ ! -f ios/Credencial.xcworkspace/contents.xcworkspacedata ]; then
