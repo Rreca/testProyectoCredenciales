@@ -19,11 +19,14 @@ workflows:
           mv ios/_FixedPodfileHeader ios/Podfile
       - name: Clean and update CocoaPods
         script: |
-          cd ios
-          rm -rf Pods Podfile.lock
-          pod install
-          pod update hermes-engine --no-repo-update
-          cd ..
+              cd ios
+              rm -rf Pods Podfile.lock
+              echo "👉 Running pod install"
+              pod install || { echo "❌ pod install failed"; exit 1; }
+              echo "✅ pod install OK"
+              echo "👉 Updating Hermes"
+              pod update hermes-engine --no-repo-update || { echo "❌ pod update failed"; exit 1; }
+              cd ..
       - name:  Verify xcworkspace exists
         script: |
           if [ ! -f ios/Credencial.xcworkspace/contents.xcworkspacedata ]; then
