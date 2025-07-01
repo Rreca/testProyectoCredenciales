@@ -13,11 +13,11 @@ workflows:
         script: |
           npm install
       - name: Clean and update CocoaPods
-      script: |
-        cd ios
-        rm -rf Pods Podfile.lock
-        pod install
-        pod update hermes-engine --no-repo-update
+        script: |
+          cd ios
+          rm -rf Pods Podfile.lock
+          pod install
+          pod update hermes-engine --no-repo-update
       - name: Build .ipa for release
         script: |
           cd ..
