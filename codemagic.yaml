@@ -14,13 +14,16 @@ workflows:
           npm install
       - name: Set platform 13.0
         script: |
-    echo "platform :ios, '13.0'" > ios/_FixedPodfileHeader tail -n +2 ios/Podfile >> ios/_FixedPodfileHeader mv ios/_FixedPodfileHeader ios/Podfile
+          echo "platform :ios, '13.0'" > ios/_FixedPodfileHeader
+          tail -n +2 ios/Podfile >> ios/_FixedPodfileHeader
+          mv ios/_FixedPodfileHeader ios/Podfile
       - name: Clean and update CocoaPods
         script: |
           cd ios
           rm -rf Pods Podfile.lock
           pod install
           pod update hermes-engine --no-repo-update
+          cd ..
       - name: Build .ipa for release
         script: |
           cd ..
