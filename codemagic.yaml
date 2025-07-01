@@ -24,6 +24,13 @@ workflows:
           pod install
           pod update hermes-engine --no-repo-update
           cd ..
+      - name:  Verify xcworkspace exists
+        script: |
+          if [ ! -f ios/Credencial.xcworkspace/contents.xcworkspacedata ]; then
+            echo "❌ .xcworkspace not generated!"
+            exit 1
+          fi
+          
       - name: Build .ipa for release
         script: |
           cd ..
