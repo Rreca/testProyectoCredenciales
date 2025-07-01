@@ -34,13 +34,14 @@ target 'Credencial' do
     inherit! :complete
     # Pods for testing
   end
-end
-# https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
-  post_install do |installer|
-    react_native_post_install(
-      installer,
-      config[:reactNativePath],
-      :mac_catalyst_enabled => false
-    )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+	# https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+	post_install do |installer|
+		react_native_post_install(
+		installer,
+		config[:reactNativePath],
+		:mac_catalyst_enabled => false
+		)
+		__apply_Xcode_12_5_M1_post_install_workaround(installer)
+	end
 end
