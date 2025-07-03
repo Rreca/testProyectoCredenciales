@@ -16,7 +16,7 @@ target 'Credencial' do
 
   use_react_native!(
     :path => config[:reactNativePath],
-    :hermes_enabled => true,
+    :hermes_enabled => false,
     :fabric_enabled => flags[:fabric_enabled],
     # :flipper_configuration => FlipperConfiguration.enabled,
     :app_path => "#{Pod::Config.instance.installation_root}/.."
@@ -35,5 +35,12 @@ target 'Credencial' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+  # 🚫 Desactivar bitcode en todos los targets
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+      end
+    end
   end
 end

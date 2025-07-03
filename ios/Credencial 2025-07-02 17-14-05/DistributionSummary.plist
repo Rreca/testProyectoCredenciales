@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Credencial.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>8</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>BBFA7EE00D38FACCBAC06D34AC1A5790D41B2CF1</string>
+				<key>dateExpires</key>
+				<string>30/05/2026</string>
+				<key>type</key>
+				<string>Cloud Managed Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>MWUQC5MJ6J.org.Credencial.Emergencias</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>MWUQC5MJ6J</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Credencial.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>ccc2da96-5253-49fb-b8c5-c2c09f54cfe4</string>
+				<key>dateExpires</key>
+				<string>30/05/2026</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: org.Credencial.Emergencias</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>MWUQC5MJ6J</string>
+				<key>name</key>
+				<string>International Health Services Argentina S.A</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>2.2.1</string>
+		</dict>
+	</array>
+</dict>
+</plist>
